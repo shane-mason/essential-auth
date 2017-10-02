@@ -15,7 +15,7 @@ install:
   - pip install passlib
 
 # command to run tests
-script: pytest -v --cov essentialdb
+script: pytest -v --cov essential_auth
 
 after_success:
     - coveralls
