@@ -22,7 +22,7 @@ Using is this simple::
 
 
 .. |CI Status| image:: https://travis-ci.org/shane-mason/essentialdb.svg?branch=master
-   :target: https://travis-ci.org/shane-mason/essentialdb
+   :target: https://travis-ci.org/shane-mason/essential_auth
 
-.. |Cov Status| image:: https://coveralls.io/repos/github/shane-mason/essentialdb/badge.svg?branch=master
-   :target: https://coveralls.io/github/shane-mason/essentialdb?branch=master
+.. |Cov Status| image:: https://coveralls.io/repos/github/shane-mason/essential_auth/badge.svg?branch=master
+   :target: https://coveralls.io/github/shane-mason/essential_auth?branch=master
