@@ -12,6 +12,8 @@ install:
   - pip install pytest-cov
   - pip install essentialdb
   - pip install essential-generators
+  - pip install passlib
+
 # command to run tests
 script: pytest -v --cov essentialdb
 
