@@ -1,5 +1,5 @@
 import unittest
-from phrasemetrics import PhraseMetrics, Metrics
+from essential_auth import PhraseMetrics, Metrics
 
 class TestPhraseMetrics(unittest.TestCase):
 
