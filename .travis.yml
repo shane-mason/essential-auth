@@ -1,0 +1,23 @@
+language: python
+python:
+  - "3.4"
+  - "3.5"
+  - "3.6"
+  - "nightly"
+# command to install dependencies
+install:
+  - pip install -U pytest
+  - pip install coveralls
+  - pip install coverage
+  - pip install pytest-cov
+  - pip install essentialdb
+  - pip install essential-generators
+# command to run tests
+script: pytest -v --cov essentialdb
+
+after_success:
+    - coveralls
+
+matrix:
+  allow_failures:
+    - python: nightly
