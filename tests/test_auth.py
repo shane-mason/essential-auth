@@ -1,5 +1,5 @@
 import unittest
-from essentialauth import EssentialAuth, SessionAssurance, ProfileNotFoundException, ProfileAlreadyExistsException, LoginAlreadyExistsException
+from essential_auth import EssentialAuth, SessionAssurance, ProfileNotFoundException, ProfileAlreadyExistsException, LoginAlreadyExistsException
 from datetime import datetime, timedelta
 import time
 import random
@@ -25,7 +25,7 @@ def make_users(count=1):
 
 
 
-class TestTropics(unittest.TestCase):
+class TestAuth(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):

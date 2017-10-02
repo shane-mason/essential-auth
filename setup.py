@@ -22,13 +22,13 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.1.0',
+    version='0.1.1',
 
     description='Essential authentication and profile library.',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/shane-mason/essential_auth',
+    url='https://github.com/shane-mason/essential-auth',
 
     # Author details
     author='Shane C Mason',
@@ -65,7 +65,7 @@ setup(
     ],
 
     # What does your project relate to?
-    keywords='database',
+    keywords='authentication authorization',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
