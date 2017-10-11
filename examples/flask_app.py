@@ -48,11 +48,7 @@ login_form =  '''
         </form>
     '''
 
-auth_config = {
-    'db_location': "flask_app_auth.db",
-    'session_idle_timeout': 100,
-    'session_absolute_timeout': 1000
-}
+
 
 
 app.run()

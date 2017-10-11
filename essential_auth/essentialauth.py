@@ -170,6 +170,11 @@ class EssentialAuth:
         """
         Fails if user exists!
         """
+        if '_id' not in profile and 'login' not in profile:
+            raise(AttributeError("Profile object must speciful 'login' or '_id"))
+        if '_id' not in profile:
+            profile['_id'] = profile['login']
+
         if self.store.profile(id=profile['_id']):
            raise(ProfileAlreadyExistsException())
         elif self.store.profile(login=profile['login']):
