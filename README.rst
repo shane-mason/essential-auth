@@ -12,6 +12,8 @@ Essenial Auth provides user management and authentication for fast integration.
 Quick Start
 ----------------------
 
+DONT START! This is in very early stages and not for use.
+
 Installing is this simple::
 
     pip install essential-auth
