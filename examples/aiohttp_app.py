@@ -38,7 +38,11 @@ async def hello(request):
     return web.Response(text="Hello, world")
 
 
-
+def logout(request):
+    request.app['auth'].end_session(request['token'])
+    response = aiohttp_jinja2.render_template('login.html', request, {'logged_in': False})
+    response.del_cookie('token')
+    return response
 
 async def login(request):
     context = {}
@@ -47,13 +51,19 @@ async def login(request):
         data = await request.post()
         login_name = data['login_name']
         passphrase = data['passphrase']
-        token = request.app['auth'].start_session(login_name, passphrase)
 
-        if token:
-            context = {'logged_in': True}
-        else:
-            context = {'logged_in' : False}
+        try:
 
+            token = request.app['auth'].start_session(login_name, passphrase)
+
+            if token:
+                context = {'logged_in': True}
+            else:
+                context = {'logged_in' : False}
+
+        except VerificationFailedException:
+            context = {'logged_in' : False, 'verify_failed': True}
+            token = None
     else:
         valid = False
         if 'token' in request.cookies:
@@ -75,6 +85,7 @@ aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader('templates'))
 app.router.add_get('/', hello)
 app.router.add_post('/login', login)
 app.router.add_get('/login', login)
+app.router.add_get('/logout', logout)
 
 app.on_startup.append(startup)
 web.run_app(app, port=8080)

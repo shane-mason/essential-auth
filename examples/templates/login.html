@@ -69,7 +69,11 @@ span.psw {
 
 {% if not logged_in %}
 
-    <h4>You Are Not Logged In</h4>
+    {% if not verify_failed %}
+    <h4>You Have Not Logged In</h4>
+    {% else %}
+    <h4>Your Login Failed</h4>
+    {% endif %}
     <form action="/login" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
 
       <div class="container">
@@ -88,7 +92,8 @@ span.psw {
       </div>
     </form>
 {% else %}
-<h4>Already Logged In!</h4>
+    <h4>Already Logged In!</h4>
+    <a href="/logout">Logout</a>
 {% endif %}
 </body>
 </html>
